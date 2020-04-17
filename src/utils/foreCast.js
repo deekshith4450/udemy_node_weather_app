@@ -10,8 +10,8 @@ function foreCast(latitude,longitude,callback){
             callback(response.body.error.info,undefined)
         }
         else{
-            const {weather_descriptions:summary, temperature, precip}=response.body.current
-            const data=summary[0] + ', It is currently '+temperature + ' degress out. There is ' + precip +'% chance of rain!'
+            const {weather_descriptions:summary, temperature, precip,humidity,feelslike}=response.body.current
+            const data=summary[0] + ', It is currently '+temperature + ' degress out. Feelslike ' + feelslike +'. There is ' + precip +'% chance of rain. Humidity is ' + humidity 
             callback(undefined,data)
         }
     })
