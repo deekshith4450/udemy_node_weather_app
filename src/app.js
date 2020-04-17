@@ -15,6 +15,8 @@ const partialspath=path.join(__dirname,'../templates/partials')
 // calling express function so that we can create and use routes.
 const app=express()
 
+const port= process.env.PORT || 3000
+
 //Setting templete engine with handlebars.
 app.set('view engine','hbs')
 app.set('views',viewspath)
@@ -99,5 +101,5 @@ app.get('*',(req,res) =>{
 
 
 app.listen(3000,function(){
-    console.log('Server started on port 3000!')
+    console.log('Server started on port ' + port)
 })

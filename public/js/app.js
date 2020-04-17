@@ -9,7 +9,7 @@ weatherForm.addEventListener('submit',(e) =>{
     // console.log(location)
     message_1.textContent='Loading.....'
     message_2.textContent=" "
-    fetch('http://localhost:3000/show_weather?address='+ location).then( (response) =>{
+    fetch('/show_weather?address='+ location).then( (response) =>{
     response.json().then((data) =>{
        if(data.error){
            message_1.textContent=data.error
@@ -27,22 +27,3 @@ weatherForm.addEventListener('submit',(e) =>{
     })
 })
 })
-
-// const sendData = () =>{
-// const search_location=document.getElementById('location').value
-// const xoo=document.getElementById('xoo')
-// fetch('http://localhost:3000/show_weather?address=!'+search_location).then( (response) =>{
-//     response.json().then((data) =>{
-//        if(data.error){
-//            console.log(data.error)
-//        } 
-//        else{
-//         console.log(data.location)
-//         console.log(data.address)
-//         console.log(data.data)
-//     }
-        
-//     })
-// })
-// xoo.textContent=data.address
-// }
